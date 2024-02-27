@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Үгінді</title>
+    <style>
+        /* CSS стили */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0E68C; /* Желтый */
+            color: #006400; /* Темно-зеленый */
+        }
+
+        h1 {
+            color: #006400; /* Темно-зеленый */
+        }
+
+        .product {
+            border: 1px solid #556B2F; /* Темно-оливковый */
+            background-color: #ADFF2F; /* Лаймовый */
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            float: left;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        button {
+            background-color: #556B2F; /* Темно-оливковый */
+            color: #ADFF2F; /* Лаймовый */
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ADFF2F; /* Лаймовый */
+            color: #556B2F; /* Темно-оливковый */
+        }
+
+        /* Стили для корзины */
+        .cart {
+            border: 1px solid #556B2F; /* Темно-оливковый */
+            background-color: #ADFF2F; /* Лаймовый */
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .cart-item {
+            margin-bottom: 10px;
+        }
+
+        /* Стили для информации об основателях */
+        #founders-info {
+            margin-top: 20px;
+        }
+
+        #founders-info h2 {
+            color: #006400; /* Темно-зеленый */
+        }
+
+        .founder {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .founder img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eco-Үгінді компаниясына қош келдіңіз!</h1>
+    
+    <!-- Информация об основателях магазина -->
+    <div id="founders-info">
+        <h2>Компанияның құрылтайшылары:</h2>
+        <div class="founder">
+            <img src="founder1.jpg" alt="Основатель 1">
+            <h3>Қайранбаев Қалмұрат</h3>
+        </div>
+        <div class="founder">
+            <img src="founder2.jpg" alt="Основатель 2">
+            <h3>Ахатова Гульнур</h3>
+        </div>
+    </div>
+    
+    <!-- Товары -->
+    <div class="product">
+        <h2>Фут-үгіндік</h2>
+        <img src="tshirts1.jpg" alt="Фут-үгіндік">
+        <p>Біздің топтамадағы футболкалар қоршаған ортаға тигізетін теріс әсерді барынша азайта отырып, органикалық мақта мен басқа да тұрақты материалдарды пайдалана отырып жасалған. Материалдар мен өндірістің жоғары сапасының арқасында олар жайлылық пен тозуға төзімділікті, сонымен қатар беріктікті қамтамасыз етеді, бұл стильді және қоршаған ортаны білуді бағалайтындар үшін тамаша таңдау жасайды.</p>
+        <p>Баға: 4000 тг</p>
+        <button onclick="addToCart('Фут-үгіндік', 4000)">Сатып алу</button>
+    </div>
+
+    <div class="product">
+        <h2>Дор-үгіндік</h2>
+        <img src="backpack.jpg" alt="Дор-үгіндік">
+        <p>Біздің сөмкелер дұрыс кәдеге жаратылған кезде қоршаған ортаға зиян келтірмейтін қайта өңделетін материалдардан жасалған. Жеңіл және берік, олар күнделікті қолдануға жарамды және сатып алуды ыңғайлы және қауіпсіз етуге көмектеседі.</p>
+        <p>Баға: 7000 тг</p>
+        <button onclick="addToCart('Дор-үгіндік', 7000)">Сатып алу</button>
+    </div>
+
+    <div class="product">
+        <h2>Конт-үгіндік</h2>
+        <img src="containers1.jpg" alt="Конт-үгіндік">
+        <p>Біздің экологиялық таза контейнеріміз азық-түлікті сақтауға ыңғайлы шешім ғана емес, бұл сіздің қоршаған ортаны сақтауға қосқан белсенді үлесіңіз. Жоғары сапалы және ұзаққа созылатын материалдардан жасалған контейнер бірнеше рет қайта пайдалануға арналған, осылайша бір реттік пластикалық қаптаманың көлемін азайтады.</p>
+        <p>Баға: 3000 тг</p>
+        <button onclick="addToCart('Конт-үгіндік', 3000)">Сатып алу</button>
+    </div>
+    
+    <!-- Дублированные товары для иллюзии большого количества -->
+    <div class="product">
+        <h2>Фут-үгіндік</h2>
+        <img src="tshirts.jpg" alt="Фут-үгіндік">
+        <p>Біздің топтамадағы футболкалар қоршаған ортаға тигізетін теріс әсерді барынша азайта отырып, органикалық мақта мен басқа да тұрақты материалдарды пайдалана отырып жасалған. Материалдар мен өндірістің жоғары сапасының арқасында олар жайлылық пен тозуға төзімділікті, сонымен қатар беріктікті қамтамасыз етеді, бұл стильді және қоршаған ортаны білуді бағалайтындар үшін тамаша таңдау жасайды.</p>
+        <p>Баға: 4000 тг</p>
+        <button onclick="addToCart('Фут-үгіндік', 4000)">Сатып алу</button>
+    </div>
+
+    <div class="product">
+        <h2>Дор-үгіндік</h2>
+        <img src="backpack1.jpg" alt="Дор-үгіндік">
+        <p>Біздің сөмкелер дұрыс кәдеге жаратылған кезде қоршаған ортаға зиян келтірмейтін қайта өңделетін материалдардан жасалған. Жеңіл және берік, олар күнделікті қолдануға жарамды және сатып алуды ыңғайлы және қауіпсіз етуге көмектеседі.</p>
+        <p>Баға: 7000 тг</p>
+        <button onclick="addToCart('Дор-үгіндік', 7000)">Сатып алу</button>
+    </div>
+
+    <div class="product">
+        <h2>Конт-үгіндік</h2>
+        <img src="containers.jpg" alt="Конт-үгіндік">
+        <p>Біздің экологиялық таза контейнеріміз азық-түлікті сақтауға ыңғайлы шешім ғана емес, бұл сіздің қоршаған ортаны сақтауға қосқан белсенді үлесіңіз. Жоғары сапалы және ұзаққа созылатын материалдардан жасалған контейнер бірнеше рет қайта пайдалануға арналған, осылайша бір реттік пластикалық қаптаманың көлемін азайтады.</p>
+        <p>Баға: 3000 тг</p>
+        <button onclick="addToCart('Конт-үгіндік', 3000)">Сатып алу</button>
+    </div>
+
+    <!-- Корзина -->
+    <div class="cart">
+        <h2>Корзина</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Барлығы: 0 тг</p>
+    </div>
+
+    <script>
+        let cartItems = [];
+        let total = 0;
+
+        function addToCart(itemName, price) {
+            cartItems.push({ name: itemName, price: price });
+            total += price;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsElement = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            cartItemsElement.innerHTML = '';
+            cartItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.textContent = `${item.name} - ${item.price} тг`;
+                cartItemsElement.appendChild(itemElement);
+            });
+            cartTotalElement.textContent = `БАРЛЫҒЫ: ${total} тг`;
+        }
+    </script>
+</body>
+</html>
+
+
